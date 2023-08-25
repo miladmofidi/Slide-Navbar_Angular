@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+
+  <mat-toolbar-row>
+    <button id="btnMenu" mat-button (click)="opened=!opened">
+      <mat-icon>menu</mat-icon>
+    </button>
+<!--    <button mat-button>
+      <mat-icon>home</mat-icon>
+      <a routerLink="/home" style="text-decoration: none; color: inherit;">Home</a>
+    </button>-->
+    <span>Navbar</span>
+
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav  [(opened)]="opened" mode="side">
+    <mat-list>
+      <mat-list-item class="mat-list-item">
+        <mat-icon class="mat-sidenav-icon-color">home</mat-icon>
+        <a routerLink="/home" style="text-decoration: none; color: white;"><span class="aligned-with-icon">Home</span></a></mat-list-item>
+
+      <mat-list-item>
+        <mat-icon class="mat-sidenav-icon-color">info</mat-icon>
+        <a routerLink="/about-us" style="text-decoration: none; color: white;"><span class="aligned-with-icon">About</span></a></mat-list-item>
+
+      <mat-list-item>
+        <mat-icon class="mat-sidenav-icon-color">quick_contacts_mail</mat-icon>
+        <a routerLink="/contact" style="text-decoration: none; color: white;"><span class="aligned-with-icon">Contact Us</span></a></mat-list-item>
+    </mat-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
